@@ -4,195 +4,193 @@
   align-items: center;
 }
 
+$intro: #363636;
+$almost-white: #dfdfdf;
+$light-grey: #b1b1b1;
 $orange: #f69c24;
+$poly-bg: #d3d3d3;
 
 body{
   color: black;
-  background-color: rgb(230, 230, 230);
+  background-color: white;
 }
 
 .Home{
   position: relative;
   margin: 0 auto;
-  max-width: 1200px;
 }
 
 .home-header{
   @include flex;
+  justify-content: space-between;
   position: fixed;
   top: 0;
   left: 0px;
   width: 100vw;
   height: 55px;
+  padding: 0 20px;
   color:white;
+  z-index: 100;
   background-color: rgb(17, 17, 17);
+  h1{
+    font-size: 1.5rem;
+  }
+  img{
+    height: 45px;
+    max-height: 45px;
+  }
 }
 
-.intro, .testimonials, .services{
-  margin: 100px 0;
-}
+.intro-cont, .in-touch-cont, .services-cont, .gallery-cont, .testimonials-cont {
+  max-width: 1200px;
+} 
+
+.intro, .in-touch, .services, .gallery, .testimonials{
+  width:100%;
+} 
 
 .home-body{
   @include flex;
   flex-direction: column;
   width: 100%;
-  margin-top: 55px;
-    .intro{
-      @include flex;
-      margin: 100px 0;
-    .intro-img{
-      text-align: center;
+  
+  .intro{
+    z-index: 1;
+    position: relative;
+    min-height: 70vh;
+    @include flex;
+    margin-top: 55px;
+    overflow: hidden;
+    background-color: $poly-bg;
+    box-shadow: 0px 0px 15px -5px black;
+    .intro-cover{
+      position: absolute;
+      background-size: cover;
       width: 100%;
-      flex: 1;
+      min-width: 1920px;
+      min-height: 100%;
+      opacity: .3;
+      z-index: -1;
     }
-    .intro-body{
-      flex: 1;
+    .intro-cont{
+      @include flex;
+      justify-content: space-between;
+      align-items: stretch;
+      border-radius: 10px;
+      opacity: 1;
+      overflow: hidden;
+      border: 3px solid black;
+      background-color: $poly-bg;
+      .intro-img{
+        @include flex;
+        width: 100%;
+        flex: 1;
+        img{
+          width: 50%;
+          min-width: 200px;
+          filter: drop-shadow(-2px 3px 5px $light-grey);
+        }
+      }
+      .intro-body{
+        @include flex;
+        flex: 1;
+        padding: 50px;
+        color: white;
+        letter-spacing: .5px;
+        background-color: rgb(17, 17, 17);
+      }
     }
   }
   .in-touch{
     @include flex;
-    justify-content: space-evenly;
-    width: 100%;
-    .contact{
-      font-size: 1.2rem;
-      .number{
-        padding-bottom: 10px;
-      }
-      .address{
-      }
-    }
-    .socials{
+    .in-touch-cont{
       @include flex;
-      flex-direction: column;
-      h2{
-        margin: 10px 0;
+      width: 100%;
+      justify-content: space-evenly;
+      padding: 100px 0;
+      .contact, .socials{
+        min-width: 200px;
+        h1{
+          cursor: default;
+          margin-bottom: 30px;
+        }
       }
-      .icons{
-      @include flex;
-      img{
-        margin: 0 10px;
-          width: 50px;
+      .contact{
+        @include flex;
+        flex-direction: column;
+        font-size: 1.2rem;
+        .number{
+          margin-bottom: 20px;
+        }
+        .number, .email{
+          box-shadow: -2px 3px 7px -5px black;
+          cursor: pointer;
+          font-size: 1.2rem;
+          min-width: 250px;
+          background-color: $almost-white;
+          transition: .3s;
+          p{
+            cursor: default;
+            text-align: center;
+            padding: 12px 30px;
+            border-radius: 5px;
+            border: 1px solid $light-grey;
+          } 
+        }
+        .email{
+          p{cursor: pointer;}
+          & :hover{
+            transition: .3s;
+            border: 1px solid $orange;
+            background-color: white;
+          }
+        }
+      }
+      .socials{
+        @include flex;
+        flex-direction: column;
+        .icons{
+          @include flex;
+          padding: 12px 30px;
+          border-radius: 5px;
+          border: 1px solid $light-grey;
+          box-shadow: -2px 3px 7px -5px black;
+          background-color: $almost-white;
+          a{
+            @include flex;
+            img{
+              margin: 0 10px;
+              width: 45px;
+            }
+          }
         }
       }
     }
   }
   .services{
     @include flex;
-    align-items: flex-start;
-    justify-content: space-evenly;
-    width: 100%;
-    .one, .two{
-      h1{
-        font-weight: 400;
-        border-bottom: 1px solid $orange;
-        padding-bottom: 10px;
-        margin-bottom: 20px;
-        margin-top: 30px;
-      }
-      h3{
-        margin-top: 20px;
-        margin-bottom: 10px;
-      }
-      li{}
-    }
-  }
-  .testimonials{
-    @include flex;
-    align-items: flex-start;
-    div{
-      flex:1 ;
-      text-align: center;
-      header{
-        width: 90%;
-        margin: 0 auto;
-        padding-bottom: 10px;
-        margin-bottom: 20px;
-        border-bottom: 1px solid $orange;
-        h3{
-          padding-bottom: 10px;
-        }
-        p{}
-      }
-      body{
-        margin: 0 auto;
-        width: 80%;
-        color: rgb(100, 100, 100);
-      }
-    }
-  }
-}
-
-.home-footer{
-  @include flex;
-  height: 50px;
-}
-
-@media (max-width: 600px) {
-
-  .Home{
-    width: 90%;
-  }
-
-  .home-header{
-    h1{
-      font-size: 1.4rem;
-    }
-  }
-
-  .home-body{
-    margin-top: 55px;
-    margin: 0;
-      .intro{
-        flex-direction: column;
-        margin: 100px 0;
-      .intro-img{
-        flex: 1;
-        img{
-          max-width: 250px;
-        }
-      }
-      .intro-body{
-        flex: 1;
-      }
-    }
-    .in-touch{
+    padding: 100px 0;
+    background-color: $almost-white;
+    clip-path: polygon(0 3%, 100% 0, 100% 97%, 0 100%);
+    .services-cont{
+      width: 100%;
+      @include flex;
+      align-items: flex-start;
       justify-content: space-evenly;
-      flex-direction: column;
-      text-align: center;
-      width: 100%;
-      .contact{
-        font-size: 1.2rem;
-        padding-bottom: 30px;
-        .number{
-          padding-bottom: 10px;
-        }
-        .address{
-        }
-      }
-      .socials{
-        flex-direction: column;
-        h2{
-          margin: 10px 0;
-        }
-        .icons{
-          img{
-            margin: 0 10px;
-            width: 50px;
-          }
-        }
-      }
-    }
-    .services{
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      width: 100%;
+      border-radius: 10px;
+      padding: 20px 0;
+      padding-bottom: 40px;
+      border: 1px solid black;
+      background-color: white;
+      box-shadow: -2px 3px 7px -5px black;
       .one, .two{
-        width: 100%;
+        margin: 0 50px;
         h1{
+          font-weight: 400;
           padding-bottom: 10px;
-          margin-bottom: 20px;
+          margin-bottom: 30px;
           margin-top: 30px;
+          border-bottom: 2px solid $orange;
         }
         h3{
           margin-top: 20px;
@@ -200,28 +198,225 @@ body{
         }
         li{}
       }
+      .two{
+        .inline{
+          display: flex;
+          width: 100%;
+          .inline-p{
+            font-weight: 400;
+            margin-left: 5px;
+            font-size: 1.1rem;
+          }
+        }
+      }
     }
-    .testimonials{
-      align-items: flex-start;
-      flex-direction: column;
+  }
+  .testimonials{
+    @include flex;
+    flex-direction: column;
+    padding: 100px 0;
+    h1{
+      padding: 10px 0;
+      margin-bottom: 10px;
+      text-align: center;
+      font-size: 2rem;
+    }
+    .testimonials-cont{
+      @include flex;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 20px 0;
+      background-color: $almost-white;
+      border-radius: 10px;
+      border: 1px solid $light-grey;
+      box-shadow: -2px 3px 7px -5px black;
       div{
-        padding: 50px 0;
+        flex: 1;
+        margin: 0 20px;
+        text-align: center;
         header{
           width: 90%;
           margin: 0 auto;
           padding-bottom: 10px;
           margin-bottom: 20px;
+          border-bottom: 2px solid $orange;
           h3{
             padding-bottom: 10px;
           }
-          p{}
         }
         body{
           margin: 0 auto;
-          width: 80%;
+          font-style: italic;
+          color: rgb(90, 90, 90);
+          background-color: transparent;
+          img{
+            padding-top: 20px;
+            width: 33%;
+          }
         }
       }
     }
   }
+}
+  
+.home-footer{
+  @include flex;
+  height: 50px;
+  color:white;
+  background-color: rgb(17, 17, 17);
+}
 
+@media (max-width: 600px) {
+  .Home{
+    width: 100%;
+  }
+  .home-header{
+    width: 100%;
+    h1{
+      font-size: 1.1rem;
+    }
+    img{
+      max-height: 40px;
+    }
+  }
+  .intro, .in-touch, .services, .gallery, .testimonials{
+    width:95%;
+  }
+  
+  .home-body{
+    margin-top: 55px;
+    margin: 0;
+    .intro{
+      width: 100%;
+      margin: 55px 0;
+      box-shadow: 0px 0px 10px -3px black;
+      border-bottom: 3px solid black;
+      .intro-cover{
+        display: none;
+      }
+      .intro-cont{
+        flex-direction: column;
+        border-radius: 0;
+        border: 0px solid transparent;
+        .intro-img{
+          flex: 1;
+          padding: 50px 0;
+          img{
+            width: 250px;
+            max-width: 250px;
+          }
+        }
+        .intro-body{
+          flex: 1;
+          width: 100%;
+          margin: 0 auto;
+          padding: 50px 20px;
+          padding-top: 0;
+          color: black;
+          background-color: transparent;
+        }
+      }
+    }
+    .in-touch{
+      justify-content: space-evenly;
+      text-align: center;
+      width: 100%;
+      .in-touch-cont{
+        flex-direction: column;
+        padding: 50px 0;
+        .contact{
+          padding-bottom: 30px;
+        .number{
+        font-size: 1rem;
+        }
+        .email{
+        font-size: 1rem;
+        }
+        }
+        .socials{
+          flex-direction: column;
+          p{
+            margin: 10px 0;
+            font-size: 1.2rem;;
+          }
+          .icons{
+            a{
+              img{
+                margin: 0 10px;
+                width: 35px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .services{
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      .services-cont{
+        width: 100%;
+        flex-direction: column;
+        border: none;
+        border-bottom: 1px solid black;
+        border-top: 1px solid black;
+        border-radius: 0px;
+        .one, .two{
+          width: 90%;
+          margin: 0 auto;
+          padding-bottom: 0px;
+          border: 0px solid transparent;
+          background-color: transparent;
+          h1{
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            margin-top: 30px;
+          }
+          h3{
+            margin-top: 20px;
+            margin-bottom: 10px;
+          }
+          li{}
+        }
+      }
+    }
+    .testimonials{
+      width: 100%;
+      padding-bottom: 50px;
+      .testimonials-cont{
+        flex-direction: column;
+        width: 100%;
+        padding: 20px 0;
+        background-color: transparent;
+        border: 0px solid transparent;
+        box-shadow: unset;
+        div:not(:last-child){
+          margin-bottom: 20px;
+        }
+        div{
+          width: 95%;
+          padding: 30px 0;
+          background-color: $almost-white;
+          border-radius: 10px;
+          box-shadow: 0px 0px 10px -5px;
+          header{
+            width: 95%;
+            margin: 0 auto;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            h3{
+              padding-bottom: 10px;
+            }
+          }
+          body{
+            margin: 0 auto;
+            width: 95%;
+          }
+        }
+      }
+    }
+  }
+  .home-footer{
+    font-size: .9rem;
+  }
 }
