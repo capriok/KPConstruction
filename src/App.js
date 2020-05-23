@@ -3,6 +3,7 @@ import './App.scss';
 import './Index.scss';
 
 import introCover from './images/intro-cover.jpg'
+import introCoverMobile from './images/intro-cover-mobile.jpg'
 import logoBlack from './images/logo-black.png'
 import logoWhite from './images/logo-white.png'
 import fbIcon from './images/fb-icon.png'
@@ -39,6 +40,7 @@ function App() {
             </div>
           </div>
           <img className="intro-cover" src={introCover} alt="" />
+          <img className="intro-cover-mobile" src={introCoverMobile} alt="" />
         </section>
         <section className="in-touch">
           <div className="in-touch-cont">
@@ -157,7 +159,7 @@ function App() {
           </div>
         </section>
       </body>
-      <footer className="home-footer"><p>© 2020 KP Construction | All rights reserved.</p></footer>
+      <footer className="home-footer"><p>© 2020 Keith Phillingane LLC. | All rights reserved.</p></footer>
     </div>
   );
 }

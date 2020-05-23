@@ -72,6 +72,10 @@ body{
       opacity: .3;
       z-index: -1;
     }
+    .intro-cover-mobile{
+      opacity: 1;
+      display: none;
+    }
     .intro-cont{
       @include flex;
       justify-content: space-between;
@@ -123,12 +127,13 @@ body{
           margin-bottom: 20px;
         }
         .number, .email{
-          box-shadow: -2px 3px 7px -5px black;
           cursor: pointer;
           font-size: 1.2rem;
           min-width: 250px;
+          border-radius: 5px;
           background-color: $almost-white;
-          transition: .3s;
+          box-shadow: -2px 3px 7px -5px black;
+          background: linear-gradient(320deg, rgba(238,238,238,1) 0%, rgba(223,223,223,1) 40%, rgba(223,223,223,1) 50%, rgba(238,238,238,1) 100%);
           p{
             cursor: default;
             text-align: center;
@@ -139,10 +144,17 @@ body{
         }
         .email{
           p{cursor: pointer;}
+          background: linear-gradient(320deg, rgba(238,238,238,1) 0%, rgba(223,223,223,1) 40%, rgba(223,223,223,1) 50%, rgba(238,238,238,1) 100%);
+          transition: .3s;
           & :hover{
             transition: .3s;
             border: 1px solid $orange;
-            background-color: white;
+            background-color: $almost-white;
+          }
+          & :active{
+            transition: .3s;
+            border: 1px solid $orange;
+            background-color: $almost-white;
           }
         }
       }
@@ -291,13 +303,22 @@ body{
       margin: 55px 0;
       box-shadow: 0px 0px 10px -3px black;
       border-bottom: 3px solid black;
-      .intro-cover{
-        display: none;
+      .intro-cover{opacity: 0; display: none;}
+      .intro-cover-mobile{
+        display: block;
+        position: absolute;
+        background-size: cover;
+        width: 100%;
+        min-height: 100%;
+        opacity: .15;
+        z-index: -1;
       }
       .intro-cont{
         flex-direction: column;
         border-radius: 0;
         border: 0px solid transparent;
+        background-color: transparent;
+        z-index: 1;
         .intro-img{
           flex: 1;
           padding: 50px 0;
@@ -313,8 +334,7 @@ body{
           padding: 50px 20px;
           padding-top: 0;
           color: black;
-          background-color: transparent;
-        }
+          background: linear-gradient(0deg, rgba(223,223,223,0.8262334230567226) 0%, rgba(223,223,223,0.7365975687149859) 30%, rgba(255,255,255,0) 100%);        }
       }
     }
     .in-touch{
@@ -327,7 +347,7 @@ body{
         .contact{
           padding-bottom: 30px;
         .number{
-        font-size: 1rem;
+          font-size: 1rem;
         }
         .email{
         font-size: 1rem;
@@ -399,6 +419,7 @@ body{
           background-color: $almost-white;
           border-radius: 10px;
           box-shadow: 0px 0px 10px -5px;
+          border: 1px solid $light-grey;
           header{
             width: 95%;
             margin: 0 auto;
