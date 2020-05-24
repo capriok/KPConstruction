@@ -195,6 +195,7 @@ body {
 .contact-cont,
 .services-cont,
 .gallery-cont,
+.carousel-nav,
 .testimonials-cont {
   max-width: 1200px;
 }
@@ -399,9 +400,9 @@ body {
   .gallery {
     @include flex;
     flex-direction: column;
-    height: 500px;
     overflow: hidden;
     .title {
+      user-select: none;
       margin-bottom: 20px;
     }
     .gallery-cont {
@@ -412,19 +413,49 @@ body {
       border: 1px solid $light-grey;
       box-shadow: -2px 3px 7px -5px black;
       background: $testimonial-cont-gradiant;
-      .carousel-slide-btn {
-        all: unset;
-        img {
-          cursor: pointer;
-          filter: invert(1);
-          width: 30px;
-          margin: 0 40px;
-        }
+      .slide-btn {
+        cursor: pointer;
+        filter: invert(1);
+        user-select: none;
+        width: 30px;
+        margin: 0 40px;
       }
       .alice-carousel {
-        .carousel-img {
-          width: 300px;
-          max-width: 300px;
+        .img-cont {
+          @include flex;
+          height: 400px;
+          .carousel-img {
+            user-select: none;
+            width: 300px;
+            border-radius: 5px;
+            border: 1px solid $light-grey;
+          }
+        }
+      }
+    }
+    .carousel-nav {
+      user-select: none;
+      overflow-x: scroll;
+      @include flex;
+      width: 100%;
+      max-width: 1200px;
+      margin-top: 20px;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid $light-grey;
+      box-shadow: -2px 3px 7px -5px black;
+      background: $testimonial-cont-gradiant;
+      .img-cont {
+        @include flex;
+        flex-direction: column;
+        margin: 0px 10px;
+        img {
+          cursor: pointer;
+          height: 100px;
+          border-radius: 5px;
+          border: 1px solid $light-grey;
+        }
+        p {
         }
       }
     }
@@ -434,6 +465,7 @@ body {
     flex-direction: column;
     padding: 100px 0;
     h1 {
+      user-select: none;
       text-align: center;
       padding: 10px 0;
       margin-bottom: 10px;
@@ -554,6 +586,7 @@ body {
   .contact,
   .services,
   .gallery,
+  .carousel-nav,
   .testimonials {
     width: 95%;
   }
