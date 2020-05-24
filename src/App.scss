@@ -10,48 +10,46 @@ $light-grey: #b1b1b1;
 $orange: #f69c24;
 $poly-bg: #d3d3d3;
 $intro-body-gradiant: linear-gradient(
-  0deg, 
-  rgba(223,223,223,.9) 0%, 
-  rgba(223,223,223,0.7) 30%, 
-  rgba(255,255,255,0) 100%
-  );
-$in-touch-button-gradiant: linear-gradient(
-  320deg, 
-  rgba(240,240,240,1) 0%,
-  rgba(223,223,223,1) 40%,
-  rgba(223,223,223,1) 50%,
-  rgba(240,240,240,1) 100%
+  0deg,
+  rgba(223, 223, 223, 0.9) 0%,
+  rgba(223, 223, 223, 0.7) 30%,
+  rgba(255, 255, 255, 0) 100%
+);
+$contact-button-gradiant: linear-gradient(
+  320deg,
+  rgba(240, 240, 240, 1) 0%,
+  rgba(223, 223, 223, 1) 40%,
+  rgba(223, 223, 223, 1) 50%,
+  rgba(240, 240, 240, 1) 100%
 );
 $testimonial-cont-gradiant: linear-gradient(
-  320deg, 
-  rgba(235,235,235,1) 0%,
-  rgba(225,225,225,1) 20%,
-  rgba(215,215,215,1) 40%,
-  rgba(215,215,215,1) 60%,
-  rgba(225,225,225,1) 80%,
-  rgba(235,235,235,1) 100%
+  320deg,
+  rgba(235, 235, 235, 1) 0%,
+  rgba(225, 225, 225, 1) 20%,
+  rgba(215, 215, 215, 1) 40%,
+  rgba(215, 215, 215, 1) 60%,
+  rgba(225, 225, 225, 1) 80%,
+  rgba(235, 235, 235, 1) 100%
 );
 $testimonial-card-gradiant: linear-gradient(
-  320deg, 
-  rgba(230,230,230,1) 0%,
-  rgba(223,223,223,1) 40%,
-  rgba(223,223,223,1) 50%,
-  rgba(230,230,230,1) 100%
+  320deg,
+  rgba(230, 230, 230, 1) 0%,
+  rgba(223, 223, 223, 1) 40%,
+  rgba(223, 223, 223, 1) 50%,
+  rgba(230, 230, 230, 1) 100%
 );
 
-
-
-body{
+body {
   color: black;
   background-color: white;
 }
 
-.Home{
+.Home {
   position: relative;
   margin: 0 auto;
 }
 
-.home-header{
+.home-header {
   z-index: 1000;
   @include flex;
   justify-content: space-between;
@@ -61,22 +59,24 @@ body{
   width: 100vw;
   height: 55px;
   padding: 0 20px;
-  color:white;
+  color: white;
   background-color: rgb(17, 17, 17);
-  h1{font-size: 1.5rem;}
-  img{
+  h1 {
+    font-size: 1.5rem;
+  }
+  img {
     height: 45px;
     max-height: 45px;
   }
 }
-.clickout{
+.clickout {
   z-index: 400;
   position: fixed;
   height: 100vh;
   width: 100vw;
-  background-color: rgba($color: black, $alpha: .2);
+  background-color: rgba($color: black, $alpha: 0.2);
 }
-.inquiry{
+.inquiry {
   z-index: 500;
   @include flex;
   flex-direction: column;
@@ -93,16 +93,16 @@ body{
   border-right: 3px solid black;
   border-bottom: 3px solid black;
   background-color: $almost-white;
-  .close{
+  .close {
     user-select: none;
     align-self: flex-end;
-    img{
+    img {
       filter: invert(1);
       cursor: pointer;
       width: 25px;
     }
   }
-  h1{
+  h1 {
     user-select: none;
     text-align: center;
     width: 90%;
@@ -110,32 +110,35 @@ body{
     margin-bottom: 20px;
     border-bottom: 2px solid $orange;
   }
-  .post-submit{
+  .post-submit {
     @include flex;
     flex-direction: column;
     width: 100%;
     height: 200px;
-    h1{
+    h1 {
       user-select: text;
       font-size: 2rem;
       border: none;
     }
-    .sub{
-      font-size: 1.2rem; 
+    .sub {
+      font-size: 1.2rem;
       padding-bottom: 0px;
       margin-bottom: 0px;
     }
   }
-  form{
+  form {
     flex: 1;
     @include flex;
     justify-content: flex-start;
     flex-direction: column;
     width: 400px;
-    input:first-child{
+    input:first-child {
       margin-top: 0px;
     }
-    input, .select-opt > select, textarea, button{
+    input,
+    .select-opt > select,
+    textarea,
+    button {
       outline: none;
       border: none;
       width: 100%;
@@ -146,55 +149,69 @@ body{
       border: 1px solid $light-grey;
       background-color: white;
     }
-    .select-opt{
+    .select-opt {
       width: 100%;
-      .title{
+      .title {
         user-select: none;
-        display: flex; 
+        display: flex;
         justify-content: space-between;
-        font-size: .9rem;
+        font-size: 0.9rem;
         margin-top: 10px;
       }
-      select{
+      select {
         padding: 5px;
         margin-top: 5px;
-        font-size: .9rem;
-        option{font-size: .9rem;}
+        font-size: 0.9rem;
+        option {
+          font-size: 0.9rem;
+        }
       }
     }
-    textarea{
+    textarea {
       resize: vertical;
       min-height: 60px;
     }
-    button{
+    button {
       cursor: pointer;
       user-select: none;
-      font-size: .9rem;
+      font-size: 0.9rem;
       width: auto;
       padding: 4px 20px;
-      &:hover{border-color: $orange;}
-      &:active{border-color: $orange;}
+      &:hover {
+        border-color: $orange;
+      }
+      &:active {
+        border-color: $orange;
+      }
     }
-    button[disabled]{
+    button[disabled] {
       color: rgb(215, 215, 215);
       border-color: $light-grey;
     }
   }
 }
 
-.intro-cont, .in-touch-cont, .services-cont, .gallery-cont, .testimonials-cont {
+.intro-cont,
+.contact-cont,
+.services-cont,
+.gallery-cont,
+.testimonials-cont {
   max-width: 1200px;
-} 
+}
 
-.intro, .in-touch, .services, .gallery, .testimonials{
-  width:100%;
-} 
+.intro,
+.contact,
+.services,
+.gallery,
+.testimonials {
+  width: 100%;
+}
 
-.home-body{
+.home-body {
   @include flex;
   flex-direction: column;
   width: 100%;
-  .intro{
+  .intro {
     z-index: 1;
     position: relative;
     min-height: 70vh;
@@ -203,20 +220,20 @@ body{
     overflow: hidden;
     background-color: $poly-bg;
     box-shadow: 0px 0px 15px -5px black;
-    .intro-cover{
+    .intro-cover {
       z-index: -1;
-      opacity: .3;
+      opacity: 0.3;
       position: absolute;
       width: 100%;
       min-width: 1920px;
       min-height: 100%;
       background-size: cover;
     }
-    .intro-cover-mobile{
+    .intro-cover-mobile {
       opacity: 1;
       display: none;
     }
-    .intro-cont{
+    .intro-cont {
       overflow: hidden;
       opacity: 1;
       @include flex;
@@ -225,102 +242,105 @@ body{
       border-radius: 10px;
       border: 3px solid black;
       background-color: $poly-bg;
-      .intro-img{
+      .intro-img {
         position: relative;
         @include flex;
         width: 100%;
         flex: 1;
-        .intro-logo{
+        .intro-logo {
           width: 65%;
           min-width: 200px;
           filter: drop-shadow(-2px 3px 5px $light-grey);
         }
-        .ccb{
+        .ccb {
           position: absolute;
           bottom: 0;
           right: 10px;
           font-weight: bold;
         }
       }
-      .intro-body{
+      .intro-body {
         @include flex;
         flex: 1;
         padding: 50px;
         color: white;
-        letter-spacing: .5px;
+        letter-spacing: 0.5px;
         background-color: rgb(17, 17, 17);
       }
     }
   }
-  .in-touch{
+  .contact {
     @include flex;
-    .in-touch-cont{
+    .contact-cont {
       @include flex;
       width: 100%;
       justify-content: space-evenly;
       padding: 100px 0;
-      .contact, .socials{
+      .personal,
+      .socials {
         min-width: 200px;
-        h1{
+        h1 {
           cursor: default;
           margin-bottom: 30px;
         }
       }
-      .contact{
+      .personal {
         @include flex;
         flex-direction: column;
         font-size: 1.2rem;
-        .number{
+        .number {
           margin-bottom: 20px;
         }
-        .number, .email{
+        .number,
+        .email {
           cursor: pointer;
           font-size: 1.2rem;
           min-width: 250px;
           border-radius: 5px;
           background-color: $almost-white;
           box-shadow: -2px 3px 7px -5px black;
-          background: $in-touch-button-gradiant;
-          p{
+          background: $contact-button-gradiant;
+          p {
             cursor: default;
             text-align: center;
             padding: 12px 30px;
             border-radius: 5px;
             border: 1px solid $light-grey;
-          } 
+          }
         }
-        .email{
-          p{cursor: pointer;}
-            transition: .3s;
-            background: $in-touch-button-gradiant;
-            p{
-
-              &:hover{
-                transition: .3s;
-                border: 1px solid $orange;
-                background-color: #f0f0f0;
-              }
-              &:active{
-                transition: .3s;
-                border: 1px solid $orange;
-                background-color: #f0f0f0;
-              }
+        .email {
+          p {
+            cursor: pointer;
+          }
+          transition: 0.3s;
+          background: $contact-button-gradiant;
+          p {
+            &:hover {
+              transition: 0.3s;
+              border: 1px solid $orange;
+              background-color: #f0f0f0;
             }
+            &:active {
+              transition: 0.3s;
+              border: 1px solid $orange;
+              background-color: #f0f0f0;
+            }
+          }
         }
       }
-      .socials{
+      .socials {
         @include flex;
         flex-direction: column;
-        .icons{
+        .icons {
           @include flex;
           padding: 12px 30px;
           border-radius: 5px;
           border: 1px solid $light-grey;
           box-shadow: -2px 3px 7px -5px black;
-          background: $in-touch-button-gradiant;
-          a{
+          background: $contact-button-gradiant;
+          a {
             @include flex;
-            img{
+            img {
               margin: 0 10px;
               width: 45px;
             }
@@ -329,12 +349,12 @@ body{
       }
     }
   }
-  .services{
+  .services {
     @include flex;
     padding: 100px 0;
     background-color: $almost-white;
     clip-path: polygon(0 3%, 100% 0, 100% 97%, 0 100%);
-    .services-cont{
+    .services-cont {
       @include flex;
       align-items: flex-start;
       justify-content: space-evenly;
@@ -345,28 +365,29 @@ body{
       border: 1px solid black;
       background-color: white;
       box-shadow: -2px 3px 7px -5px black;
-      .one, .two{
+      .one,
+      .two {
         margin: 0 50px;
-        h1{
+        h1 {
           font-weight: 400;
           padding-bottom: 10px;
           margin-top: 30px;
           margin-bottom: 30px;
           border-bottom: 2px solid $orange;
         }
-        h3{
+        h3 {
           margin-top: 20px;
           margin-bottom: 10px;
         }
-        li{
+        li {
           text-indent: 20px;
         }
       }
-      .two{
-        .inline{
+      .two {
+        .inline {
           display: flex;
           width: 100%;
-          .inline-p{
+          .inline-p {
             font-weight: 400;
             margin-left: 5px;
             font-size: 1.1rem;
@@ -375,17 +396,50 @@ body{
       }
     }
   }
-  .testimonials{
+  .gallery {
+    @include flex;
+    flex-direction: column;
+    height: 500px;
+    overflow: hidden;
+    .title {
+      margin-bottom: 20px;
+    }
+    .gallery-cont {
+      @include flex;
+      width: 100%;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid $light-grey;
+      box-shadow: -2px 3px 7px -5px black;
+      background: $testimonial-cont-gradiant;
+      .carousel-slide-btn {
+        all: unset;
+        img {
+          cursor: pointer;
+          filter: invert(1);
+          width: 30px;
+          margin: 0 40px;
+        }
+      }
+      .alice-carousel {
+        .carousel-img {
+          width: 300px;
+          max-width: 300px;
+        }
+      }
+    }
+  }
+  .testimonials {
     @include flex;
     flex-direction: column;
     padding: 100px 0;
-    h1{
+    h1 {
       text-align: center;
       padding: 10px 0;
       margin-bottom: 10px;
       font-size: 2rem;
     }
-    .testimonials-cont{
+    .testimonials-cont {
       @include flex;
       justify-content: space-evenly;
       align-items: center;
@@ -394,24 +448,26 @@ body{
       border: 1px solid $light-grey;
       box-shadow: -2px 3px 7px -5px black;
       background: $testimonial-cont-gradiant;
-      div{
+      div {
         text-align: center;
         flex: 1;
         margin: 0 20px;
-        header{
+        header {
           width: 90%;
           margin: 0 auto;
           padding-bottom: 10px;
           margin-bottom: 20px;
           border-bottom: 2px solid $orange;
-          h3{padding-bottom: 10px;}
+          h3 {
+            padding-bottom: 10px;
+          }
         }
-        section{
+        section {
           font-style: italic;
           margin: 0 auto;
           color: rgb(90, 90, 90);
           background-color: transparent;
-          img{
+          img {
             padding-top: 20px;
             width: 33%;
           }
@@ -420,24 +476,24 @@ body{
     }
   }
 }
-  
-.home-footer{
+
+.footer {
   @include flex;
   flex-direction: column;
-  color:white;
+  color: white;
   padding: 30px 0;
   background-color: rgb(17, 17, 17);
-  .rights{
+  .rights {
     font-size: 1.1rem;
-    padding-top:30px;
+    padding-top: 30px;
   }
-  main{
+  main {
     @include flex;
     justify-content: space-evenly;
     align-items: stretch;
     width: 100%;
     margin: 20px;
-    section{
+    section {
       flex: 1;
       display: flex;
       flex-direction: column;
@@ -445,18 +501,18 @@ body{
       height: 100%;
       width: 100%;
       margin: 10px;
-      .logo{
+      .logo {
         height: 100px;
         margin: 0 auto;
       }
-      h3{
+      h3 {
         text-align: center;
         padding-bottom: 5px;
         margin-bottom: 15px;
         border-bottom: 1px solid white;
       }
-      p{
-        a{
+      p {
+        a {
           text-decoration: none;
           color: white;
           border-bottom: 1px solid white;
@@ -468,12 +524,12 @@ body{
 
 ////////////////////////////// MEDIA ///////////////////////////////
 
-@media(max-width: 850px){
-  .home-body{
-    .intro{
-      .intro-cont{
+@media (max-width: 850px) {
+  .home-body {
+    .intro {
+      .intro-cont {
         flex-direction: column;
-        .intro-img{
+        .intro-img {
           padding: 40px 0;
         }
       }
@@ -482,23 +538,31 @@ body{
 }
 
 @media (max-width: 600px) {
-  .Home{
+  .Home {
     width: 100%;
   }
-  .home-header{
+  .home-header {
     width: 100%;
-    h1{font-size: 1.1rem;}
-    img{max-height: 40px;}
+    h1 {
+      font-size: 1.1rem;
+    }
+    img {
+      max-height: 40px;
+    }
   }
-  .intro, .in-touch, .services, .gallery, .testimonials{
-    width:95%;
+  .intro,
+  .contact,
+  .services,
+  .gallery,
+  .testimonials {
+    width: 95%;
   }
 
-  .clickout{
+  .clickout {
     display: none;
     opacity: 0;
   }
-  .inquiry{
+  .inquiry {
     position: fixed;
     width: 100vw;
     height: calc(100% - 55px);
@@ -506,56 +570,63 @@ body{
     transform: unset;
     border-radius: none;
     border: none;
-    .close{
+    .close {
       align-self: flex-end;
-      img{width: 25px;}
+      img {
+        width: 25px;
+      }
     }
-    h1{width: 100%;}
-    form{
+    h1 {
+      width: 100%;
+    }
+    form {
       flex: 0;
       width: 100%;
     }
   }
-  
-  .home-body{
+
+  .home-body {
     margin-top: 55px;
     margin: 0;
-    .intro{
+    .intro {
       width: 100%;
       margin: 55px 0;
       border-bottom: 3px solid black;
       box-shadow: 0px 0px 10px -3px black;
-      .intro-cover{opacity: 0; display: none;}
-      .intro-cover-mobile{
+      .intro-cover {
+        opacity: 0;
+        display: none;
+      }
+      .intro-cover-mobile {
         z-index: -1;
-        opacity: .15;
+        opacity: 0.15;
         display: block;
         position: absolute;
         width: 100%;
         min-height: 100%;
         background-size: cover;
       }
-      .intro-cont{
+      .intro-cont {
         z-index: 1;
         flex-direction: column;
         border-radius: 0;
         border: 0px solid transparent;
         background-color: transparent;
-        .intro-img{
+        .intro-img {
           flex: 1;
           padding-top: 50px 0;
           padding-bottom: 50px;
           margin-bottom: 25px;
-          .intro-logo{
+          .intro-logo {
             width: 300px;
             max-width: 300px;
           }
-          .ccb{
+          .ccb {
             right: 20px;
           }
         }
-        .intro-body{
-          letter-spacing: .2px;
+        .intro-body {
+          letter-spacing: 0.2px;
           flex: 1;
           width: 100%;
           margin: 0 auto;
@@ -566,27 +637,31 @@ body{
         }
       }
     }
-    .in-touch{
+    .contact {
       text-align: center;
       justify-content: space-evenly;
       width: 100%;
-      .in-touch-cont{
+      .contact-cont {
         flex-direction: column;
         padding: 50px 0;
-        .contact{
+        .personal {
           padding-bottom: 30px;
-          .number{font-size: 1rem;}
-          .email{font-size: 1rem;}
-        }
-        .socials{
-          flex-direction: column;
-          p{
-            margin: 10px 0;
-            font-size: 1.2rem;;
+          .number {
+            font-size: 1rem;
           }
-          .icons{
-            a{
-              img{
+          .email {
+            font-size: 1rem;
+          }
+        }
+        .socials {
+          flex-direction: column;
+          p {
+            margin: 10px 0;
+            font-size: 1.2rem;
+          }
+          .icons {
+            a {
+              img {
                 margin: 0 10px;
                 width: 35px;
               }
@@ -595,64 +670,69 @@ body{
         }
       }
     }
-    .services{
+    .services {
       align-items: center;
       justify-content: center;
       width: 100%;
-      .services-cont{
+      .services-cont {
         flex-direction: column;
         width: 100%;
         border: none;
         border-bottom: 1px solid black;
         border-top: 1px solid black;
         border-radius: 0px;
-        .one, .two{
+        .one,
+        .two {
           width: 90%;
           margin: 0 auto;
           padding-bottom: 0px;
           border: 0px solid transparent;
           background-color: transparent;
-          h1{
+          h1 {
             padding-bottom: 10px;
             margin-bottom: 20px;
             margin-top: 30px;
           }
-          h3{
+          h3 {
             margin-top: 20px;
             margin-bottom: 10px;
           }
-          li{text-indent: 10px;}
+          li {
+            text-indent: 10px;
+          }
         }
       }
     }
-    .testimonials{
+    .testimonials {
       width: 100%;
       padding-bottom: 50px;
-      .testimonials-cont{
+      .testimonials-cont {
         flex-direction: column;
         width: 100%;
         padding: 20px 0;
         border: 0px solid transparent;
         box-shadow: unset;
         background: transparent;
-        div:not(:last-child){
+        div:not(:last-child) {
           margin-bottom: 20px;
         }
-        div{
+        div {
           width: 95%;
           padding: 30px 0;
           border-radius: 10px;
           border: 1px solid $light-grey;
           box-shadow: 0px 0px 10px -5px;
           background: $testimonial-card-gradiant;
-          header{
+          header {
             width: 95%;
             margin: 0 auto;
             padding-bottom: 10px;
             margin-bottom: 20px;
-            h3{padding-bottom: 10px;}
+            h3 {
+              padding-bottom: 10px;
+            }
           }
-          section{
+          section {
             margin: 0 auto;
             width: 95%;
           }
@@ -660,19 +740,19 @@ body{
       }
     }
   }
-  .home-footer{
+  .footer {
     padding: 10px 0;
-    .rights{
-      font-size: .9rem;
+    .rights {
+      font-size: 0.9rem;
       padding-top: 0px;
     }
-    main{
+    main {
       @include flex;
       justify-content: flex-start;
       flex-direction: column;
       width: 100vw;
       margin: 0;
-      section{
+      section {
         display: none;
       }
     }
