@@ -9,6 +9,37 @@ $almost-white: #dfdfdf;
 $light-grey: #b1b1b1;
 $orange: #f69c24;
 $poly-bg: #d3d3d3;
+$intro-body-gradiant: linear-gradient(
+  0deg, 
+  rgba(223,223,223,.9) 0%, 
+  rgba(223,223,223,0.7) 30%, 
+  rgba(255,255,255,0) 100%
+  );
+$in-touch-button-gradiant: linear-gradient(
+  320deg, 
+  rgba(240,240,240,1) 0%,
+  rgba(223,223,223,1) 40%,
+  rgba(223,223,223,1) 50%,
+  rgba(240,240,240,1) 100%
+);
+$testimonial-cont-gradiant: linear-gradient(
+  320deg, 
+  rgba(235,235,235,1) 0%,
+  rgba(225,225,225,1) 20%,
+  rgba(215,215,215,1) 40%,
+  rgba(215,215,215,1) 60%,
+  rgba(225,225,225,1) 80%,
+  rgba(235,235,235,1) 100%
+);
+$testimonial-card-gradiant: linear-gradient(
+  320deg, 
+  rgba(230,230,230,1) 0%,
+  rgba(223,223,223,1) 40%,
+  rgba(223,223,223,1) 50%,
+  rgba(230,230,230,1) 100%
+);
+
+
 
 body{
   color: black;
@@ -21,6 +52,7 @@ body{
 }
 
 .home-header{
+  z-index: 1000;
   @include flex;
   justify-content: space-between;
   position: fixed;
@@ -30,14 +62,123 @@ body{
   height: 55px;
   padding: 0 20px;
   color:white;
-  z-index: 100;
   background-color: rgb(17, 17, 17);
-  h1{
-    font-size: 1.5rem;
-  }
+  h1{font-size: 1.5rem;}
   img{
     height: 45px;
     max-height: 45px;
+  }
+}
+.clickout{
+  z-index: 400;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba($color: black, $alpha: .2);
+}
+.inquiry{
+  z-index: 500;
+  @include flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: fixed;
+  width: 50vh;
+  left: 50%;
+  transform: translate(-50%);
+  margin-top: 55px;
+  padding: 20px 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+  border-bottom: 3px solid black;
+  background-color: $almost-white;
+  .close{
+    user-select: none;
+    align-self: flex-end;
+    img{
+      filter: invert(1);
+      cursor: pointer;
+      width: 25px;
+    }
+  }
+  h1{
+    user-select: none;
+    text-align: center;
+    width: 90%;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid $orange;
+  }
+  .post-submit{
+    @include flex;
+    flex-direction: column;
+    width: 100%;
+    height: 200px;
+    h1{
+      user-select: text;
+      font-size: 2rem;
+      border: none;
+    }
+    .sub{
+      font-size: 1.2rem; 
+      padding-bottom: 0px;
+      margin-bottom: 0px;
+    }
+  }
+  form{
+    flex: 1;
+    @include flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 400px;
+    input:first-child{
+      margin-top: 0px;
+    }
+    input, .select-opt > select, textarea, button{
+      outline: none;
+      border: none;
+      width: 100%;
+      max-width: 400px;
+      padding: 3px 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: 1px solid $light-grey;
+      background-color: white;
+    }
+    .select-opt{
+      width: 100%;
+      .title{
+        user-select: none;
+        display: flex; 
+        justify-content: space-between;
+        font-size: .9rem;
+        margin-top: 10px;
+      }
+      select{
+        padding: 5px;
+        margin-top: 5px;
+        font-size: .9rem;
+        option{font-size: .9rem;}
+      }
+    }
+    textarea{
+      resize: vertical;
+      min-height: 60px;
+    }
+    button{
+      cursor: pointer;
+      user-select: none;
+      font-size: .9rem;
+      width: auto;
+      padding: 4px 20px;
+      &:hover{border-color: $orange;}
+      &:active{border-color: $orange;}
+    }
+    button[disabled]{
+      color: rgb(215, 215, 215);
+      border-color: $light-grey;
+    }
   }
 }
 
@@ -53,7 +194,6 @@ body{
   @include flex;
   flex-direction: column;
   width: 100%;
-  
   .intro{
     z-index: 1;
     position: relative;
@@ -64,25 +204,25 @@ body{
     background-color: $poly-bg;
     box-shadow: 0px 0px 15px -5px black;
     .intro-cover{
+      z-index: -1;
+      opacity: .3;
       position: absolute;
-      background-size: cover;
       width: 100%;
       min-width: 1920px;
       min-height: 100%;
-      opacity: .3;
-      z-index: -1;
+      background-size: cover;
     }
     .intro-cover-mobile{
       opacity: 1;
       display: none;
     }
     .intro-cont{
+      overflow: hidden;
+      opacity: 1;
       @include flex;
       justify-content: space-between;
       align-items: stretch;
       border-radius: 10px;
-      opacity: 1;
-      overflow: hidden;
       border: 3px solid black;
       background-color: $poly-bg;
       .intro-img{
@@ -133,7 +273,7 @@ body{
           border-radius: 5px;
           background-color: $almost-white;
           box-shadow: -2px 3px 7px -5px black;
-          background: linear-gradient(320deg, rgba(238,238,238,1) 0%, rgba(223,223,223,1) 40%, rgba(223,223,223,1) 50%, rgba(238,238,238,1) 100%);
+          background: $in-touch-button-gradiant;
           p{
             cursor: default;
             text-align: center;
@@ -144,18 +284,21 @@ body{
         }
         .email{
           p{cursor: pointer;}
-          background: linear-gradient(320deg, rgba(238,238,238,1) 0%, rgba(223,223,223,1) 40%, rgba(223,223,223,1) 50%, rgba(238,238,238,1) 100%);
-          transition: .3s;
-          & :hover{
             transition: .3s;
-            border: 1px solid $orange;
-            background-color: $almost-white;
-          }
-          & :active{
-            transition: .3s;
-            border: 1px solid $orange;
-            background-color: $almost-white;
-          }
+            background: $in-touch-button-gradiant;
+            p{
+
+              &:hover{
+                transition: .3s;
+                border: 1px solid $orange;
+                background-color: #f0f0f0;
+              }
+              &:active{
+                transition: .3s;
+                border: 1px solid $orange;
+                background-color: #f0f0f0;
+              }
+            }
         }
       }
       .socials{
@@ -167,7 +310,7 @@ body{
           border-radius: 5px;
           border: 1px solid $light-grey;
           box-shadow: -2px 3px 7px -5px black;
-          background-color: $almost-white;
+          background: $in-touch-button-gradiant;
           a{
             @include flex;
             img{
@@ -185,13 +328,13 @@ body{
     background-color: $almost-white;
     clip-path: polygon(0 3%, 100% 0, 100% 97%, 0 100%);
     .services-cont{
-      width: 100%;
       @include flex;
       align-items: flex-start;
       justify-content: space-evenly;
-      border-radius: 10px;
+      width: 100%;
       padding: 20px 0;
       padding-bottom: 40px;
+      border-radius: 10px;
       border: 1px solid black;
       background-color: white;
       box-shadow: -2px 3px 7px -5px black;
@@ -200,15 +343,17 @@ body{
         h1{
           font-weight: 400;
           padding-bottom: 10px;
-          margin-bottom: 30px;
           margin-top: 30px;
+          margin-bottom: 30px;
           border-bottom: 2px solid $orange;
         }
         h3{
           margin-top: 20px;
           margin-bottom: 10px;
         }
-        li{}
+        li{
+          text-indent: 20px;
+        }
       }
       .two{
         .inline{
@@ -228,9 +373,9 @@ body{
     flex-direction: column;
     padding: 100px 0;
     h1{
+      text-align: center;
       padding: 10px 0;
       margin-bottom: 10px;
-      text-align: center;
       font-size: 2rem;
     }
     .testimonials-cont{
@@ -238,27 +383,25 @@ body{
       justify-content: space-evenly;
       align-items: center;
       padding: 20px 0;
-      background-color: $almost-white;
       border-radius: 10px;
       border: 1px solid $light-grey;
       box-shadow: -2px 3px 7px -5px black;
+      background: $testimonial-cont-gradiant;
       div{
+        text-align: center;
         flex: 1;
         margin: 0 20px;
-        text-align: center;
         header{
           width: 90%;
           margin: 0 auto;
           padding-bottom: 10px;
           margin-bottom: 20px;
           border-bottom: 2px solid $orange;
-          h3{
-            padding-bottom: 10px;
-          }
+          h3{padding-bottom: 10px;}
         }
-        body{
-          margin: 0 auto;
+        section{
           font-style: italic;
+          margin: 0 auto;
           color: rgb(90, 90, 90);
           background-color: transparent;
           img{
@@ -278,21 +421,42 @@ body{
   background-color: rgb(17, 17, 17);
 }
 
+////////////////////////////// MEDIA ///////////////////////////////
+
 @media (max-width: 600px) {
   .Home{
     width: 100%;
   }
   .home-header{
     width: 100%;
-    h1{
-      font-size: 1.1rem;
-    }
-    img{
-      max-height: 40px;
-    }
+    h1{font-size: 1.1rem;}
+    img{max-height: 40px;}
   }
   .intro, .in-touch, .services, .gallery, .testimonials{
     width:95%;
+  }
+
+  .clickout{
+    display: none;
+    opacity: 0;
+  }
+  .inquiry{
+    position: fixed;
+    width: 100vw;
+    height: calc(100% - 55px);
+    left: unset;
+    transform: unset;
+    border-radius: none;
+    border: none;
+    .close{
+      align-self: flex-end;
+      img{width: 25px;}
+    }
+    h1{width: 100%;}
+    form{
+      flex: 0;
+      width: 100%;
+    }
   }
   
   .home-body{
@@ -301,24 +465,24 @@ body{
     .intro{
       width: 100%;
       margin: 55px 0;
-      box-shadow: 0px 0px 10px -3px black;
       border-bottom: 3px solid black;
+      box-shadow: 0px 0px 10px -3px black;
       .intro-cover{opacity: 0; display: none;}
       .intro-cover-mobile{
+        z-index: -1;
+        opacity: .15;
         display: block;
         position: absolute;
-        background-size: cover;
         width: 100%;
         min-height: 100%;
-        opacity: .15;
-        z-index: -1;
+        background-size: cover;
       }
       .intro-cont{
+        z-index: 1;
         flex-direction: column;
         border-radius: 0;
         border: 0px solid transparent;
         background-color: transparent;
-        z-index: 1;
         .intro-img{
           flex: 1;
           padding: 50px 0;
@@ -328,30 +492,28 @@ body{
           }
         }
         .intro-body{
+          letter-spacing: .2px;
           flex: 1;
           width: 100%;
           margin: 0 auto;
           padding: 50px 20px;
           padding-top: 0;
           color: black;
-          background: linear-gradient(0deg, rgba(223,223,223,0.8262334230567226) 0%, rgba(223,223,223,0.7365975687149859) 30%, rgba(255,255,255,0) 100%);        }
+          background: $intro-body-gradiant;
+        }
       }
     }
     .in-touch{
-      justify-content: space-evenly;
       text-align: center;
+      justify-content: space-evenly;
       width: 100%;
       .in-touch-cont{
         flex-direction: column;
         padding: 50px 0;
         .contact{
           padding-bottom: 30px;
-        .number{
-          font-size: 1rem;
-        }
-        .email{
-        font-size: 1rem;
-        }
+          .number{font-size: 1rem;}
+          .email{font-size: 1rem;}
         }
         .socials{
           flex-direction: column;
@@ -375,8 +537,8 @@ body{
       justify-content: center;
       width: 100%;
       .services-cont{
-        width: 100%;
         flex-direction: column;
+        width: 100%;
         border: none;
         border-bottom: 1px solid black;
         border-top: 1px solid black;
@@ -396,7 +558,7 @@ body{
             margin-top: 20px;
             margin-bottom: 10px;
           }
-          li{}
+          li{text-indent: 10px;}
         }
       }
     }
@@ -407,29 +569,28 @@ body{
         flex-direction: column;
         width: 100%;
         padding: 20px 0;
-        background-color: transparent;
         border: 0px solid transparent;
         box-shadow: unset;
+        background-color: transparent;
         div:not(:last-child){
           margin-bottom: 20px;
         }
         div{
           width: 95%;
           padding: 30px 0;
-          background-color: $almost-white;
           border-radius: 10px;
-          box-shadow: 0px 0px 10px -5px;
           border: 1px solid $light-grey;
+          box-shadow: 0px 0px 10px -5px;
+          background: $testimonial-card-gradiant;
+
           header{
             width: 95%;
             margin: 0 auto;
             padding-bottom: 10px;
             margin-bottom: 20px;
-            h3{
-              padding-bottom: 10px;
-            }
+            h3{padding-bottom: 10px;}
           }
-          body{
+          section{
             margin: 0 auto;
             width: 95%;
           }
