@@ -9,8 +9,8 @@ import Inquiry from './inquiry'
 
 import introCover from './images/intro-cover.jpg'
 import introCoverMobile from './images/intro-cover-mobile.jpg'
-import logoBlack from './images/logo-black.png'
-import logoWhite from './images/logo-white.png'
+import logoWhiteCrop from './images/logo-white-cropped.png'
+import logoBlackBare from './images/logo-black-bare.png'
 import fbIcon from './images/fb-icon.png'
 import igIcon from './images/ig-icon.png'
 import stars from './images/stars.png'
@@ -89,7 +89,7 @@ function App() {
     <div className="Home">
       <header className="home-header">
         <h1>Keith Phillingane, LLC</h1>
-        <img src={logoWhite} alt="" />
+        <img src={logoWhiteCrop} alt="" />
       </header>
       <Transition
         items={inquiryState.open}
@@ -113,7 +113,8 @@ function App() {
         <section className="intro">
           <div className="intro-cont">
             <div className="intro-img">
-              <img src={logoBlack} alt="" />
+              <img className="intro-logo" src={logoBlackBare} alt="" />
+              <p className="ccb">CCB# 228117</p>
             </div>
             <div className="intro-body">
               <p>
@@ -196,7 +197,7 @@ function App() {
               <h3>In Business Since: 2019</h3>
               <h3>State Licensing:</h3>
               <p>Trade: RGC - Residential General Contractor</p>
-              <p>License #: 228117</p>
+              <p>CCB License #: 228117</p>
               <p>Expiration: 10-22-2021</p>
             </div>
           </div>
@@ -251,7 +252,39 @@ function App() {
           </div>
         </section>
       </main>
-      <footer className="home-footer"><p>© 2020 Keith Phillingane LLC. | All rights reserved.</p></footer>
+      <footer className="home-footer">
+        <main>
+          <section>
+            <img className="logo" src={logoWhiteCrop} alt="" />
+          </section>
+          <section className="licensing">
+            <h3>State Licensing:</h3>
+            <p>Trade: Residential General Contractor</p>
+            <p>CCB License #: 228117</p>
+            <p>Expiration: 10-22-2021</p>
+          </section>
+          <section>
+            <h3>Personal Contact</h3>
+            <p>(541) 551-5020</p>
+            <p>keithphillingane@gmail.com</p>
+          </section>
+          <section>
+            <h3>Social Media</h3>
+            <p><a
+              href="https://www.facebook.com/Keith-Phillingane-Construction-101436348048975/"
+              target="_blank"
+              rel="noopener noreferrer">
+              Facebook
+            </a></p>
+            <p><a href="https://www.instagram.com/keithphillinganeconstruction/"
+              target="_blank"
+              rel="noopener noreferrer">
+              Instagram
+            </a></p>
+          </section>
+        </main>
+        <p className="rights">© 2020 Keith Phillingane LLC. | All rights reserved</p>
+      </footer>
     </div>
   );
 }
