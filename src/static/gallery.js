@@ -37,13 +37,18 @@ import LC2_2 from "../images/gallery/land-clearing/clearing2-2.jpg";
 import LC2_3 from "../images/gallery/land-clearing/clearing2-3.jpg";
 import LC3_1 from "../images/gallery/land-clearing/clearing3-1.jpg";
 
-import LS1_1 from "../images/gallery/lot-shaping/lot1-1.jpg";
-import LS1_2 from "../images/gallery/lot-shaping/lot1-2.jpg";
-import LS1_3 from "../images/gallery/lot-shaping/lot1-3.jpg";
-import LS1_4 from "../images/gallery/lot-shaping/lot1-4.jpg";
-import LS2_1 from "../images/gallery/lot-shaping/lot2-1.jpg";
-import LS2_2 from "../images/gallery/lot-shaping/lot2-2.jpg";
-import LS2_3 from "../images/gallery/lot-shaping/lot2-3.jpg";
+import RM1_1 from "../images/gallery/road-maintenance/lot1-1.jpg";
+import RM1_2 from "../images/gallery/road-maintenance/lot1-2.jpg";
+import RM1_3 from "../images/gallery/road-maintenance/lot1-3.jpg";
+import RM1_4 from "../images/gallery/road-maintenance/lot1-4.jpg";
+import RM2_1 from "../images/gallery/road-maintenance/lot2-1.jpg";
+import RM2_2 from "../images/gallery/road-maintenance/lot2-2.jpg";
+import RM2_3 from "../images/gallery/road-maintenance/lot2-3.jpg";
+
+import T1_1 from "../images/gallery/trenching/trenching1-1.jpg";
+import T1_2 from "../images/gallery/trenching/trenching1-2.jpg";
+import T1_3 from "../images/gallery/trenching/trenching1-3.jpg";
+import T1_4 from "../images/gallery/trenching/trenching1-4.jpg";
 
 import M_1 from "../images/gallery/miscellaneous/misc1.jpg";
 import M_2 from "../images/gallery/miscellaneous/misc2.jpg";
@@ -62,8 +67,9 @@ const home3Images = [H3_1, H3_2, H3_3, H3_4, H3_5, H3_6]
 const landClearing1Images = [LC1_1, LC1_2, LC1_3, LC1_4]
 const landClearing2Images = [LC2_1, LC2_2, LC2_3]
 const landClearing3Images = [LC3_1]
-const landShaping1Images = [LS1_1, LS1_2, LS1_3, LS1_4]
-const landShaping2Images = [LS2_1, LS2_2, LS2_3]
+const roadMaintenance1Images = [RM1_1, RM1_2, RM1_3, RM1_4]
+const roadMaintenance2Images = [RM2_1, RM2_2, RM2_3]
+const trenching1Images = [T1_1, T1_2, T1_3, T1_4]
 const miscellaneous1Images = [M_1, M_2]
 const miscellaneous2Images = [SI_1, SI_2, SI_3, SI_4]
 const miscellaneous3Images = [TM_1, TM_2, TM_3]
@@ -72,13 +78,13 @@ const miscellaneous3Images = [TM_1, TM_2, TM_3]
 const fencingImages = fencing1Images.concat()
 const homePrepImages = home1Images.concat(home2Images, home3Images);
 const landClearingImages = landClearing1Images.concat(landClearing2Images, landClearing3Images);
-const lotShapingImages = landShaping1Images.concat(landShaping2Images);
+const roadMaintenanceImages = roadMaintenance1Images.concat(roadMaintenance2Images);
+const trenchingImages = trenching1Images.concat();
 const miscImages = miscellaneous1Images.concat(miscellaneous2Images, miscellaneous3Images);
 
 const Gallery = () => {
   const isMobile = window.innerWidth < 500
   let ref = React.useRef()
-  const [isDragging, setIsDragging] = React.useState(false)
   const handleOnDragStart = (e) => e.preventDefault()
   const responsive = { 0: { items: 1 }, 600: { items: 2 }, 1024: { items: 3 } };
 
@@ -105,9 +111,10 @@ const Gallery = () => {
 
   const sets = [
     { name: 'Land Clearing', thumb: landClearingImages[7], arr: landClearingImages },
+    { name: 'Site Preparation', thumb: homePrepImages[3], arr: homePrepImages },
+    { name: 'Road Maintenance', thumb: roadMaintenanceImages[4], arr: roadMaintenanceImages },
+    { name: 'Utilities Trenching', thumb: trenchingImages[0], arr: trenchingImages },
     { name: 'Fencing', thumb: fencingImages[1], arr: fencingImages },
-    { name: 'Home Prep', thumb: homePrepImages[13], arr: homePrepImages },
-    { name: 'Lot Shaping', thumb: lotShapingImages[4], arr: lotShapingImages },
     { name: 'Miscellaneous', thumb: miscImages[1], arr: miscImages }
   ]
 

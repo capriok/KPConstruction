@@ -7,7 +7,7 @@ const Services = () => {
         <div className="one">
           <h1>Service Area</h1>
           <li>Myrtle Point</li>
-          <li>Brandon</li>
+          <li>Bandon</li>
           <h1>Services Offered</h1>
           <h3>Decks</h3>
           <li>Deck or porch build/replace</li>
@@ -26,7 +26,6 @@ const Services = () => {
           <li>Excavation</li>
           <li>Trenching</li>
           <li>Road/Driveway Grading</li>
-          <li>Carpentry</li>
           <h1>Quick Facts</h1>
           <h3 className="inline">Business Hours: <p className="inline-p">Call to confirm</p></h3>
           <li>Commerical</li>

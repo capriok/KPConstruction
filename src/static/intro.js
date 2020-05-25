@@ -24,8 +24,8 @@ const Intro = () => {
             you! Road building, Road resurfacing, Road brushing for clearance, Land Clearing
             and leveling, Ditch repair, Culverts , Service trenching for power, water and
             septic, Hazard tree removal, Rock, sand and fill hauling, Demo work, Emergency
-            water line digout, I service all of Coo's County. Bandon, Coo's Bay, Mrytle Point,
-            Langlois, Port Orford.
+            water line digout, I service all of Coo's County. Bandon, Coo's Bay, Coquille, Mrytle Point,
+            Langlois.
             </p>
         </div>
       </div>
