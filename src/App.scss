@@ -360,6 +360,7 @@ body {
       align-items: flex-start;
       justify-content: space-evenly;
       width: 100%;
+      max-width: 95%;
       padding: 20px 0;
       padding-bottom: 40px;
       border-radius: 10px;
@@ -440,6 +441,7 @@ body {
       }
       .alice-carousel {
         width: 95%;
+        max-width: 90%;
         .img-cont {
           @include flex;
           height: 400px;
@@ -744,6 +746,7 @@ body {
       .services-cont {
         flex-direction: column;
         width: 100%;
+        max-width: 100%;
         border: none;
         border-bottom: 1px solid black;
         border-top: 1px solid black;
@@ -779,6 +782,8 @@ body {
       flex-direction: column;
       overflow: hidden;
       padding-top: 70px;
+      width: 100%;
+      min-width: 100%;
       .title {
         user-select: none;
         margin-bottom: 20px;
@@ -787,8 +792,10 @@ body {
         @include flex;
         width: 100%;
         padding: 20px;
-        border-radius: 10px;
-        border: 1px solid $light-grey;
+        border-radius: 0px;
+        border: none;
+        border-top: 1px solid $light-grey;
+        border-bottom: 1px solid $light-grey;
         box-shadow: -2px 3px 7px -5px black;
         background: $testimonial-cont-gradiant;
         .slide-btn {
@@ -814,6 +821,10 @@ body {
         @include flex;
         justify-content: flex-start;
         width: 100%;
+        border-radius: 0px;
+        border: none;
+        border-top: 1px solid $light-grey;
+        border-bottom: 1px solid $light-grey;
         .img-cont {
           @include flex;
           flex-direction: column;
@@ -826,6 +837,10 @@ body {
             max-height: 150px;
           }
           p {
+            padding-top: 5px;
+            font-size: 0.9rem;
+            line-height: 17px;
+            min-height: 50px;
           }
         }
       }
