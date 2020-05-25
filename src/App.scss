@@ -74,7 +74,7 @@ body {
   position: fixed;
   height: 100vh;
   width: 100vw;
-  background-color: rgba($color: black, $alpha: 0.3);
+  background-color: rgba($color: black, $alpha: 0.5);
 }
 .inquiry {
   z-index: 500;
@@ -434,10 +434,11 @@ body {
         cursor: pointer;
         filter: invert(1);
         user-select: none;
-        width: 30px;
-        margin: 0 40px;
+        width: 35px;
+        margin: 0 5px;
       }
       .alice-carousel {
+        width: 95%;
         .img-cont {
           @include flex;
           height: 400px;
@@ -774,13 +775,10 @@ body {
         box-shadow: -2px 3px 7px -5px black;
         background: $testimonial-cont-gradiant;
         .slide-btn {
-          cursor: pointer;
-          filter: invert(1);
-          user-select: none;
-          width: 30px;
-          margin: 0 40px;
+          display: none;
         }
         .alice-carousel {
+          width: 100%;
           .img-cont {
             @include flex;
             height: 400px;

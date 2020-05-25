@@ -133,7 +133,7 @@ const Gallery = () => {
         <AliceCarousel
           className="alice-carousel"
           ref={(el) => (ref = el)}
-          mouseTrackingEnabled={true}
+          mouseTrackingEnabled={isMobile ? true : false}
           infinite={false}
           responsive={responsive}
           dotsDisabled={true}
