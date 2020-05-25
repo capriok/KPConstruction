@@ -800,7 +800,6 @@ body {
         justify-content: flex-start;
         width: 100%;
         .img-cont {
-          align-self: stretch;
           @include flex;
           flex-direction: column;
           padding: 0 20px;
