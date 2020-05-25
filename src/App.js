@@ -99,8 +99,8 @@ function App() {
           emailTest={emailTest} />
       </InquiryTransition>
       <Clickout
-        inquiryState={inquiryState}
-        handleInquiryClose={handleInquiryClose} />
+        state={inquiryState}
+        close={handleInquiryClose} />
       <header className="home-header">
         <h1>Keith Phillingane, LLC</h1>
         <img src={logoWhiteCrop} alt="" />

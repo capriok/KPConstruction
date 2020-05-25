@@ -2,6 +2,8 @@ import React from 'react'
 import AliceCarousel from 'react-alice-carousel'
 import 'react-alice-carousel/lib/alice-carousel.css'
 
+import FullView from '../components/full-view'
+
 import arrowPrev from '../images/arrow-prev.png'
 import arrowNext from '../images/arrow-next.png'
 
@@ -74,20 +76,32 @@ const lotShapingImages = landShaping1Images.concat(landShaping2Images);
 const miscImages = miscellaneous1Images.concat(miscellaneous2Images, miscellaneous3Images);
 
 const Gallery = () => {
+  const isMobile = window.innerWidth < 500
   let ref = React.useRef()
+  const [isDragging, setIsDragging] = React.useState(false)
   const handleOnDragStart = (e) => e.preventDefault()
   const responsive = { 0: { items: 1 }, 600: { items: 2 }, 1024: { items: 3 } };
 
   const createMap = (images) => {
-    const map = images.map((h, i) => (
+    const map = images.map((src, i) => (
       <div className="img-cont" key={i}>
-        <img src={h} alt="" className="carousel-img" onDragStart={handleOnDragStart} />
+        <img src={src} alt="" className="carousel-img"
+          onDragStart={handleOnDragStart}
+          onClick={() => !isMobile && setViewState({ open: true, img: src })} />
       </div>
     ))
     return map
   }
 
-  const [items, setItems] = React.useState(createMap(landClearingImages))
+  const [items, setItems] = React.useState([])
+  const [viewState, setViewState] = React.useState({
+    open: false,
+    img: ''
+  })
+
+  const handleViewClose = () => {
+    setViewState({ open: false, img: '' })
+  }
 
   const sets = [
     { name: 'Land Clearing', thumb: landClearingImages[7], arr: landClearingImages },
@@ -97,17 +111,20 @@ const Gallery = () => {
     { name: 'Miscellaneous', thumb: miscImages[1], arr: miscImages }
   ]
 
-  const navItems = sets.map((s, i) => (
-    <span key={i}>
-      <div className="img-cont">
-        <img src={s.thumb} alt="" onClick={() => setItems(createMap(s.arr))} />
-        <p>{s.name}</p>
-      </div>
-    </span>
+  const navItems = sets.map((set, i) => (
+    <div className="img-cont" key={i}>
+      <img src={set.thumb} alt="" onClick={() => setItems(createMap(set.arr))} />
+      <p>{set.name}</p>
+    </div>
   ))
+
+  React.useEffect(() => {
+    setItems(createMap(landClearingImages))
+  }, [])
 
   return (
     <>
+      {viewState.open && <FullView state={viewState} close={handleViewClose} />}
       <h1 className="title">Gallery</h1>
       <div className="gallery-cont">
         <img src={arrowPrev} alt=""
@@ -121,7 +138,9 @@ const Gallery = () => {
           responsive={responsive}
           dotsDisabled={true}
           buttonsDisabled={true}
-          items={items}>
+          items={items}
+          startIndex={0}
+        >
         </AliceCarousel>
         <img src={arrowNext} alt=""
           className="slide-btn"

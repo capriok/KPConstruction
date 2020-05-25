@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Clickout = ({ inquiryState, handleInquiryClose }) => {
+const Clickout = ({ state, close }) => {
   return (
     <>
-      {inquiryState.open && <div className="clickout" onClick={() => handleInquiryClose()}></div>}
+      {state.open && <div className="clickout" onClick={() => close()}></div>}
     </>
   )
 }

@@ -74,7 +74,7 @@ body {
   position: fixed;
   height: 100vh;
   width: 100vw;
-  background-color: rgba($color: black, $alpha: 0.2);
+  background-color: rgba($color: black, $alpha: 0.3);
 }
 .inquiry {
   z-index: 500;
@@ -397,6 +397,23 @@ body {
       }
     }
   }
+  .full-view {
+    z-index: 500;
+    @include flex;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    transform: translate(-50%, -50%);
+    img {
+      z-index: 1000;
+      max-width: 70%;
+      max-height: 80%;
+      border-radius: 10px;
+      border: 3px solid black;
+    }
+  }
   .gallery {
     @include flex;
     flex-direction: column;
@@ -425,6 +442,7 @@ body {
           @include flex;
           height: 400px;
           .carousel-img {
+            cursor: pointer;
             user-select: none;
             width: 300px;
             border-radius: 5px;
@@ -435,7 +453,6 @@ body {
     }
     .carousel-nav {
       user-select: none;
-      overflow-x: scroll;
       @include flex;
       width: 100%;
       max-width: 1200px;
@@ -732,6 +749,68 @@ body {
           }
           li {
             text-indent: 10px;
+          }
+        }
+      }
+    }
+
+    .full-view {
+      display: none;
+    }
+    .gallery {
+      @include flex;
+      flex-direction: column;
+      overflow: hidden;
+      .title {
+        user-select: none;
+        margin-bottom: 20px;
+      }
+      .gallery-cont {
+        @include flex;
+        width: 100%;
+        padding: 20px;
+        border-radius: 10px;
+        border: 1px solid $light-grey;
+        box-shadow: -2px 3px 7px -5px black;
+        background: $testimonial-cont-gradiant;
+        .slide-btn {
+          cursor: pointer;
+          filter: invert(1);
+          user-select: none;
+          width: 30px;
+          margin: 0 40px;
+        }
+        .alice-carousel {
+          .img-cont {
+            @include flex;
+            height: 400px;
+            .carousel-img {
+              cursor: pointer;
+              user-select: none;
+              width: 300px;
+              border-radius: 5px;
+              border: 1px solid $light-grey;
+            }
+          }
+        }
+      }
+      .carousel-nav {
+        overflow-x: scroll;
+        @include flex;
+        justify-content: flex-start;
+        width: 100%;
+        .img-cont {
+          align-self: stretch;
+          @include flex;
+          flex-direction: column;
+          padding: 0 20px;
+          margin: 0;
+          img {
+            cursor: pointer;
+            width: 100px;
+            height: fit-content;
+          }
+          p {
           }
         }
       }
