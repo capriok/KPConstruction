@@ -418,6 +418,7 @@ body {
     @include flex;
     flex-direction: column;
     overflow: hidden;
+    padding-top: 100px;
     .title {
       user-select: none;
       margin-bottom: 20px;
