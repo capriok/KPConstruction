@@ -74,7 +74,6 @@ const miscellaneous1Images = [M_1, M_2]
 const miscellaneous2Images = [SI_1, SI_2, SI_3, SI_4]
 const miscellaneous3Images = [TM_1, TM_2, TM_3]
 
-
 const fencingImages = fencing1Images.concat()
 const homePrepImages = home1Images.concat(home2Images, home3Images);
 const landClearingImages = landClearing1Images.concat(landClearing2Images, landClearing3Images);

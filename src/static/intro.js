@@ -2,7 +2,6 @@ import React from 'react'
 
 import introCover from '../images/intro-cover.jpg'
 import introCoverMobile from '../images/intro-cover-mobile.jpg'
-import logoWhiteCrop from '../images/logo-white-cropped.png'
 import logoBlackBare from '../images/logo-black-bare.png'
 
 const Intro = () => {

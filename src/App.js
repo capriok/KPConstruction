@@ -40,7 +40,7 @@ function App() {
   const submitEmail = async (e) => {
     e.preventDefault()
     let isValid = emailTest()
-    if (!inquiryForm.name, !inquiryForm.email, !inquiryForm.body) return
+    if (!inquiryForm.name || !inquiryForm.email || !inquiryForm.body) return
     if (!isValid) return
     setInquiryState({ ...inquiryState, submitLoading: true })
     Axios.post(process.env.REACT_APP_POST + '/send', inquiryForm)
