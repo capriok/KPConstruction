@@ -9,8 +9,6 @@ const Services = () => {
           <li>Myrtle Point</li>
           <li>Bandon</li>
           <h1>Services Offered</h1>
-          {/* <h3>Decks</h3> */}
-          {/* <li>Deck or porch build/replace</li> */}
           <h3>Excavation</h3>
           <li>Major Grading or Resloping</li>
           <li>Site Preparation</li>
