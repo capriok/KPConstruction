@@ -281,6 +281,7 @@ body {
       .socials {
         min-width: 200px;
         h1 {
+          user-select: none;
           cursor: default;
           margin-bottom: 30px;
         }
@@ -311,6 +312,7 @@ body {
         }
         .email {
           p {
+            user-select: none;
             cursor: pointer;
           }
           transition: 0.3s;
@@ -342,6 +344,7 @@ body {
           a {
             @include flex;
             img {
+              user-select: none;
               margin: 0 10px;
               width: 45px;
             }
@@ -523,6 +526,7 @@ body {
           color: rgb(90, 90, 90);
           background-color: transparent;
           img {
+            user-select: none;
             padding-top: 20px;
             width: 33%;
           }
