@@ -188,6 +188,9 @@ body {
       color: rgb(215, 215, 215);
       border-color: $light-grey;
     }
+    button:after {
+      content: "Submit";
+    }
   }
 }
 

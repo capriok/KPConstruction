@@ -5,9 +5,12 @@ import useLockBodyScroll from '../hooks/lockbody'
 import close from '../images/close.png'
 
 const Inquiry = ({
-  submitEmail, handleInquiryClose,
-  inquiryForm, setInquiryForm,
-  inquiryState, emailTest
+  submitEmail,
+  handleInquiryClose,
+  inquiryForm,
+  setInquiryForm,
+  inquiryState,
+  emailTest
 }) => {
   const isValid = emailTest()
   useLockBodyScroll();
@@ -53,7 +56,7 @@ const Inquiry = ({
               disabled={
                 (inquiryState.submitLoading || !isValid || !inquiryForm.name || !inquiryForm.body)
                   ? true : false
-              }>Submit</button>
+              }></button>
           </form>
         }
       </div>
