@@ -177,6 +177,8 @@ body {
     user-select: none;
     font-size: 0.9rem;
     width: auto;
+    height: 35px;
+    min-height: 35px;
     padding: 4px 20px;
     margin-top: 10px;
     border-radius: 5px;
@@ -188,10 +190,6 @@ body {
     &:active {
       border-color: $orange;
     }
-  }
-  .submit-btn[disabled] {
-    color: rgb(215, 215, 215);
-    border-color: $light-grey;
   }
   .dis {
     display: none;
