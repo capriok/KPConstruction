@@ -171,7 +171,7 @@ body {
       resize: vertical;
       min-height: 60px;
     }
-    button {
+    .submit-btn {
       cursor: pointer;
       user-select: none;
       font-size: 0.9rem;
@@ -184,12 +184,9 @@ body {
         border-color: $orange;
       }
     }
-    button[disabled] {
+    .submit-btn[disabled] {
       color: rgb(215, 215, 215);
       border-color: $light-grey;
-    }
-    button:after {
-      content: "Submit";
     }
   }
 }

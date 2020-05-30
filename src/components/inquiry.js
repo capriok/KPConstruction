@@ -52,11 +52,13 @@ const Inquiry = ({
                 <option value="Instagram">Instagram</option>
               </select>
             </div>
-            <button type="submit"
+            <input
+              type="submit"
+              className="submit-btn"
               disabled={
                 (inquiryState.submitLoading || !isValid || !inquiryForm.name || !inquiryForm.body)
                   ? true : false
-              }></button>
+              }></input>
           </form>
         }
       </div>
