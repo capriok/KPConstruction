@@ -54,6 +54,7 @@ const Inquiry = ({
             </div>
             <input
               type="submit"
+              value="Submit"
               className="submit-btn"
               disabled={
                 (inquiryState.submitLoading || !isValid || !inquiryForm.name || !inquiryForm.body)
