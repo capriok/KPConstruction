@@ -11,7 +11,7 @@ const Media = () => {
       <h1 className="title">Check out what we do</h1>
       <div className="media-cont">
         <ReactPlayer
-          url="https://www.youtube.com/watch?v=qIDsw7q63B0&feature=youtu.be"
+          url="https://www.youtube.com/watch?v=45SY6jsfU-E"
           controls={true}
         />
       </div>
