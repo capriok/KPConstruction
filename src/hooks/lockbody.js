@@ -1,3 +1,4 @@
+/*eslint react-hooks/exhaustive-deps: "off"*/
 import React from 'react'
 
 export default function useLockBodyScroll() {
