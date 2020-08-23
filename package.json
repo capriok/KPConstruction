@@ -10,6 +10,7 @@
     "react": "^16.13.1",
     "react-alice-carousel": "^1.19.0",
     "react-dom": "^16.13.1",
+    "react-player": "^2.6.1",
     "react-scripts": "3.4.1",
     "react-spring": "^8.0.27"
   },

@@ -9,7 +9,6 @@ import FullView from '../full-view'
 import arrowPrev from '../../images/arrow-prev.png'
 import arrowNext from '../../images/arrow-next.png'
 
-
 const fencing1Images = [i.F1_1, i.F1_2, i.F1_3, i.F1_4, i.F1_5]
 const home1Images = [i.H1_1, i.H1_2, i.H1_3, i.H1_4, i.H1_5]
 const home2Images = [i.H2_1, i.H2_2, i.H2_3]
@@ -78,19 +77,19 @@ const Gallery = () => {
     setItems(createMap(landClearingImages))
   }, [])
 
+  const Nav = (props, { src }) => (<img src={src} alt="" className="slide-btn" {...props} />)
+
   return (
     <>
       {viewState.open && <FullView state={viewState} close={handleViewClose} />}
       <h1 className="title">Gallery</h1>
       <div className="gallery-cont">
-        <img src={arrowPrev} alt=""
-          className="slide-btn"
-          onClick={() => ref.slidePrev()} />
+        <Nav src={arrowPrev} onClick={() => ref.slidePrev()} />
         <AliceCarousel
           className="alice-carousel"
           ref={(el) => (ref = el)}
           mouseTrackingEnabled={isMobile ? true : false}
-          infinite={false}
+          infinite={true}
           responsive={responsive}
           dotsDisabled={true}
           buttonsDisabled={true}
@@ -98,9 +97,7 @@ const Gallery = () => {
           startIndex={0}
         >
         </AliceCarousel>
-        <img src={arrowNext} alt=""
-          className="slide-btn"
-          onClick={() => ref.slideNext()} />
+        <Nav src={arrowNext} onClick={() => ref.slideNext()} />
       </div>
       <nav className="carousel-nav">{navItems}</nav>
     </>

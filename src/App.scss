@@ -58,15 +58,20 @@ body {
   left: 0px;
   width: 100vw;
   height: 55px;
-  padding: 0 20px;
+  padding: 0 25px;
+  padding-right: 30px;
   color: white;
   background-color: rgb(17, 17, 17);
+  * {
+    user-select: none;
+    cursor: default;
+  }
   h1 {
     font-size: 1.5rem;
   }
   img {
-    height: 45px;
-    max-height: 45px;
+    height: 40px;
+    max-height: 40px;
   }
 }
 .clickout {
@@ -196,6 +201,7 @@ body {
 .intro-cont,
 .contact-cont,
 .services-cont,
+.media-cont,
 .gallery-cont,
 .carousel-nav,
 .testimonials-cont {
@@ -205,6 +211,7 @@ body {
 .intro,
 .contact,
 .services,
+.media,
 .gallery,
 .testimonials {
   width: 100%;
@@ -417,6 +424,24 @@ body {
       max-height: 80%;
       border-radius: 10px;
       border: 3px solid black;
+    }
+  }
+  .media {
+    @include flex;
+    flex-direction: column;
+    padding-top: 100px;
+    .title {
+      user-select: none;
+      margin-bottom: 20px;
+    }
+    .media-cont {
+      @include flex;
+      padding: 20px;
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid $light-grey;
+      box-shadow: -2px 3px 7px -5px black;
+      background: $testimonial-cont-gradiant;
     }
   }
   .gallery {
@@ -778,7 +803,12 @@ body {
         }
       }
     }
-
+    .media {
+      width: 100%;
+      .media-cont {
+        border-radius: 0px;
+      }
+    }
     .full-view {
       display: none;
     }

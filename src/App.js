@@ -7,6 +7,7 @@ import Axios from 'axios'
 import Intro from './static/intro'
 import Services from './static/services'
 import Contact from './static/contact'
+import Media from './components/media/media'
 import Gallery from './components/gallery/gallery'
 import Footer from './static/footer'
 import Testimonials from './static/testimonials'
@@ -86,17 +87,16 @@ function App() {
     }, 500);
   }
 
+  const inquiryProps = {
+    submitEmail, handleInquiryClose,
+    inquiryState, emailTest,
+    inquiryForm, setInquiryForm
+  }
+
   return (
     <div className="Home">
       <InquiryTransition inquiryState={inquiryState}>
-        <Inquiry
-          submitEmail={submitEmail}
-          handleInquiryClose={handleInquiryClose}
-          inquiryState={inquiryState}
-          setInquiryState={setInquiryState}
-          inquiryForm={inquiryForm}
-          setInquiryForm={setInquiryForm}
-          emailTest={emailTest} />
+        <Inquiry {...inquiryProps} />
       </InquiryTransition>
       <Clickout
         state={inquiryState}
@@ -116,6 +116,9 @@ function App() {
         </section>
         <section className="services">
           <Services />
+        </section>
+        <section className="media">
+          <Media />
         </section>
         <section className="gallery">
           <Gallery />
